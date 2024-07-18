@@ -190,14 +190,14 @@ class TasksViewModel(private val tasksRepository: TasksRepository) : ViewModel()
         val result = MutableLiveData<List<Task>>()
 
         if (tasksResult is Success) {
-            isDataLoadingError.value = false
+          //  isDataLoadingError.value = false
             viewModelScope.launch {
                 result.value = filterItems(tasksResult.data, currentFiltering)
             }
         } else {
             result.value = emptyList()
             showSnackbarMessage(R.string.loading_tasks_error)
-            isDataLoadingError.value = true
+           // isDataLoadingError.value = true
         }
 
         return result
