@@ -77,4 +77,23 @@ dependencies {
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20"
     implementation "androidx.fragment:fragment-ktx:1.8.1"
+
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
+
+
+    // Dependencies for Android instrumented unit tests
+    androidTestImplementation "junit:junit:$junitVersion"
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
+
+    // Testing code should not be included in the main code.
+    // Once https://issuetracker.google.com/128612536 is fixed this can be fixed.
+
+    debugImplementation "androidx.fragment:fragment-testing:1.8.1"
+    androidTestImplementation "androidx.test:core:1.5.0"
+
+    androidTestImplementation "org.mockito:mockito-core:5.11.0"
+
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:2.28.1"
+
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:3.6.1"
 }
